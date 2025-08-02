@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Patient Data</title>
+    <link rel="stylesheet" href="/static/patientrecord1.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Submit Patient Data</h2>
+        <form action="/submit" method="post">
+            <label for="number">Patient Number:</label>
+            <input type="text" id="number" name="number" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="diagnosis">Diagnosis:</label>
+            <textarea id="diagnosis" name="diagnosis" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if request.args.get('success') %}
+        <p class="success">Patient data saved successfully!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

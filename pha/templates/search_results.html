@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/static/search_results.css">
+</head>
+<body>
+    <h1>Search Results for "{{ search_term }}"</h1>
+    {% if results %}
+    <table>
+        <thead>
+            <tr>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.split(': ')[1] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[2] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[3] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[4] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[5] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[] }}</td>
+                <td>{{ result.split(': ')[6] }}</td>
+                
+
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No results found.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Invoice</title>
+    <link rel="stylesheet" href="/static/invoice.css">
+</head>
+<body>
+    <h1>Selvi Kumutham Hospital</h1>
+    <form action="/generate_invoice" method="POST">
+        <br><br>
+        <div id="items-container">
+            <div class="item">
+                <label for="items">Item:</label>
+                <input type="text" name="items[]" required>
+                <label for="prices">Price:</label>
+                <input type="number" name="prices[]" step="0.01" required>
+                <label for="quantities">Quantity:</label>
+                <input type="number" name="quantities[]" required>
+            </div>
+        </div>
+        <br>
+        <button type="button" onclick="addItem()">Add Another Item</button>
+        <br><br>
+        <button type="submit">Generate Invoice</button>
+    </form>
+
+    {% if invoice_items %}
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in invoice_items %}
+            <tr>
+                <td>{{ item.item }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.amount }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3">Total</td>
+                <td>{{ total_amount }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+
+    <script>
+        function addItem() {
+            var container = document.getElementById('items-container');
+            var itemDiv = document.createElement('div');
+            itemDiv.className = 'item';
+            itemDiv.innerHTML = `
+                <label for="items">Item:</label>
+                <input type="text" name="items[]" required>
+                <label for="prices">Price:</label>
+                <input type="number" name="prices[]" step="0.01" required>
+                <label for="quantities">Quantity:</label>
+                <input type="number" name="quantities[]" required>
+            `;
+            container.appendChild(itemDiv);
+        }
+    </script>
+</body>
+</html>

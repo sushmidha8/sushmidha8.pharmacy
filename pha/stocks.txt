@@ -1,0 +1,3 @@
+Name: dolo 500,Stock Quantity  : 23, Stock Price: 5.0
+Name: dolo 650,Stock Quantity  : 100, Stock Price: 5.0
+Name: gelusil,Stock Quantity  : 100, Stock Price: 5.0

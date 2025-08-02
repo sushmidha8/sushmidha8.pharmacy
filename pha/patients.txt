@@ -1,0 +1,4 @@
+Number: 9443576441, Age: 19, Gender: Male, Diagnosis: fever
+Number: 9443576440, Age: 19, Gender: Female, Diagnosis: head ache,fever
+Number: 8925617163, Age: 19, Gender: Male, Diagnosis: head ache
+Number: 1, Age: 12, Gender: Female, Diagnosis: 1w1w

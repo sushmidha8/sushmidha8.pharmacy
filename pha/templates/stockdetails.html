@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Details</title>
+    <link rel="stylesheet" href="/static/stockdetails.css">
+</head>
+<body>
+    
+    <form id="stockForm" action="/add_stock" method="post">
+        <h1>Stock Details</h1>
+        <label for="stockName">Stock Name:</label>
+        <input type="text" id="stockName" name="stockName">
+        <label for="stockQuantity">Quantity:</label>
+        <input type="number" id="stockQuantity" name="stockQuantity">
+        <label for="stockPrice">Stock Price:</label>
+        <input type="number" id="stockPrice" name="stockPrice">
+        <button type="submit">Add Stock</button>
+    </form>
+    <div id="stockList">
+        <!-- Stock details will be displayed here -->
+    </div>
+</body>
+</html>
